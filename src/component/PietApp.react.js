@@ -1,36 +1,45 @@
 var React = require("react");
-var PietStore = require("../store/PietStore");
-var PietAction = require("../action/PietAction");
+var BoardSizeStore = require("../store/BoardSizeStore");
+
 var Header = require("./Header.react");
+var ToolContainer = require("./ToolContainer.react")
+var BoardContainer = require("./BoardContainer.react")
 var Footer = require("./Footer.react");
 
 var PietApp = React.createClass({
   getInitialState: function() {
-    return {toogle: PietStore.getToogle()};
+    return {
+      boardSize: {
+        nbRow: BoardSizeStore.getNbRow(),
+        nbColumn: BoardSizeStore.getNbColumn()
+    }};
   },
 
   componentDidMount: function() {
-    PietStore.addChangeListener(this._onChange);
+    BoardSizeStore.addChangeListener(this._handleChange);
   },
 
   componentWillUnmount: function() {
-    PietStore.removeChangeListener(this._onChange);
+    BoardSizeStore.removeChangeListener(this._handleChange);
   },
 
   render: function() {
-    return <div>
+    return <div id="pietAppContainer">
         <Header />
-        <div onClick={this._onClick} >{this.state.toogle.toString()}</div>
+        <div id="contentContainer">
+          <ToolContainer />
+          <BoardContainer boardSize={this.state.boardSize} />
+        </div>
         <Footer />
       </div>
   },
 
-  _onClick: function() {
-    PietAction.toogle();
-  },
-
-  _onChange: function() {
-    this.setState({toogle: PietStore.getToogle()});
+  _handleChange: function() {
+    this.setState({
+      boardSize: {
+        nbRow: BoardSizeStore.getNbRow(),
+        nbColumn: BoardSizeStore.getNbColumn()
+    }});
   }
 });
 

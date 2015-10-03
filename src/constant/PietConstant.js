@@ -1,5 +1,9 @@
 var keyMirror = require("keymirror");
 
-module.exports = keyMirror({
-  PIET_TOOGLE: null
-});
+module.exports = {
+  ACTION_TYPE: keyMirror({
+    ADD_ROW: null,
+    DELETE_ROW: null,
+    ADD_COLUMN: null,
+    DELETE_COLUMN: null
+})};

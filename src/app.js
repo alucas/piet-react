@@ -3,5 +3,5 @@ var PietApp = require("./component/PietApp.react");
 
 React.render(
   <PietApp />,
-  document.getElementById('pietapp')
+  document.getElementById('pietApp')
 );

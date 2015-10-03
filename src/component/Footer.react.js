@@ -2,8 +2,7 @@ var React = require("react");
 
 var Footer = React.createClass({
   render: function() {
-    return <footer>
-      No copyright!
+    return <footer id="pietFooter">
     </footer>
   }
 })
