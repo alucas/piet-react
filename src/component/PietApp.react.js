@@ -1,5 +1,5 @@
 var React = require("react");
-var BoardSizeStore = require("../store/BoardSizeStore");
+var BoardStore = require("../store/BoardStore");
 
 var Header = require("./Header.react");
 var ToolContainer = require("./ToolContainer.react")
@@ -9,18 +9,16 @@ var Footer = require("./Footer.react");
 var PietApp = React.createClass({
   getInitialState: function() {
     return {
-      boardSize: {
-        nbRow: BoardSizeStore.getNbRow(),
-        nbColumn: BoardSizeStore.getNbColumn()
-    }};
+      board: BoardStore.getBoard()
+    };
   },
 
   componentDidMount: function() {
-    BoardSizeStore.addChangeListener(this._handleChange);
+    BoardStore.addChangeListener(this._handleChange);
   },
 
   componentWillUnmount: function() {
-    BoardSizeStore.removeChangeListener(this._handleChange);
+    BoardStore.removeChangeListener(this._handleChange);
   },
 
   render: function() {
@@ -28,7 +26,7 @@ var PietApp = React.createClass({
         <Header />
         <div id="contentContainer">
           <ToolContainer />
-          <BoardContainer boardSize={this.state.boardSize} />
+          <BoardContainer board={this.state.board} />
         </div>
         <Footer />
       </div>
@@ -36,10 +34,8 @@ var PietApp = React.createClass({
 
   _handleChange: function() {
     this.setState({
-      boardSize: {
-        nbRow: BoardSizeStore.getNbRow(),
-        nbColumn: BoardSizeStore.getNbColumn()
-    }});
+      board: BoardStore.getBoard()
+    });
   }
 });
 

@@ -4,7 +4,7 @@ var BoardProperties = require("./tool/BoardProperties.react")
 
 var ToolContainer = React.createClass({
   render: function() {
-    return <div id="toolContainer">
+    return <div className="toolContainer">
       <BoardProperties />
     </div>
   }

@@ -17,19 +17,15 @@ html, body, #pietApp, #pietAppContainer {
 #contentContainer {
   display: flex;
   flex: 1;
+  padding: 10px;
   background-color: #eeeeee;
 }
 
-#toolContainer {
+.toolContainer {
   width: 200px;
 }
 
-#boardContainer {
-  flex: 1;
-}
-
 .boardProperties {
-  margin: 10px;
   padding: 10px;
   border-radius: 10px;
   background-color: #dddddd;
@@ -48,11 +44,35 @@ html, body, #pietApp, #pietAppContainer {
   text-align: left;
 }
 
-.boardResizer button {
+.boardResizer button,
+.boardResizer button:focus {
   background-color: #2ecc71;
   border: none;
+  outline: none;
 }
 
 .boardResizer button:hover {
   background-color: #2eac51;
+}
+
+.boardContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #dddddd;
+}
+
+.boardContainer .boardRow {
+  display: flex;
+  flex: 1;
+}
+
+.boardContainer .boardColumn {
+  flex: 1;
+  border-style: solid;
+  border-color: #dddddd;
+  border-width: 0px 1px 1px 0px;
 }

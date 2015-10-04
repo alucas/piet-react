@@ -1,3 +1,5 @@
+"use strict";
+
 var assign = require("object-assign");
 var EventEmitter = require("events").EventEmitter;
 
@@ -6,27 +8,69 @@ var PietConstant = require("../constant/PietConstant");
 
 var CHANGE_EVENT = "change";
 
-var TYPE_ROW = "row";
-var TYPE_COLUMN = "column"
+var INIT_VALUE = [1, 1];
 
-var _boardSize = {
-  row: 10,
-  column: 10
+function _getInitValue() {
+  return INIT_VALUE.slice(0);
 }
 
-function _add(type, nb) {
-  if (typeof nb === 'undefined') {
-    nb = 1;
+var _board = [
+  [
+    _getInitValue()
+  ]
+];
+
+
+function _getBoardNbRow() {
+  return _board.length;
+}
+
+function _getBoardNbColumn() {
+  return _board[0].length;
+}
+
+function _addRow(nb) {
+  _board.push(Array.apply(null, Array(_getBoardNbColumn())).map(function() {
+    return _getInitValue();
+  }));
+}
+
+function _deleteRow(nb) {
+  var nbColumn = _getBoardNbColumn();
+  var nbRow = _getBoardNbRow();
+  if (nbRow === 1) {
+    return;
   }
 
-  _boardSize[type] += nb;
+  if (nbRow - nb <= 0) {
+    nb = nbRow - 1;
+  }
+
+  _board.splice(nbRow - nb, nb);
+}
+
+function _addColumn(nb) {
+  _board.map(function(row) {
+    return row.push(_getInitValue());
+  });
+}
+
+function _deleteColumn(nb) {
+  var nbColumn = _getBoardNbColumn();
+  if (nbColumn === 1) {
+    return;
+  }
+
+  if (nbColumn - nb <= 0) {
+    nb = nbColumn - 1;
+  }
+
+  _board.map(function(row) {
+    return row.splice(nbColumn - nb, nb);
+  });
 }
 
 function _delete(type, nb) {
-  if (typeof nb === 'undefined') {
-    nb = 1;
-  }
-
   if (_boardSize[type] - nb <= 1) {
     _boardSize[type] = 1;
     return;
@@ -36,12 +80,8 @@ function _delete(type, nb) {
 }
 
 var BoardSizeStore = assign({}, EventEmitter.prototype, {
-  getNbRow: function() {
-    return _boardSize[TYPE_ROW];
-  },
-
-  getNbColumn: function() {
-    return _boardSize[TYPE_COLUMN];
+  getBoard: function() {
+    return _board;
   },
 
   emitChange: function() {
@@ -60,24 +100,25 @@ var BoardSizeStore = assign({}, EventEmitter.prototype, {
 Dispatcher.register(function(action) {
   switch(action.actionType) {
     case PietConstant.ACTION_TYPE.ADD_ROW:
-      _add(TYPE_ROW);
+      _addRow(action.nb);
       BoardSizeStore.emitChange();
       break;
     case PietConstant.ACTION_TYPE.DELETE_ROW:
-      _delete(TYPE_ROW);
+      _deleteRow(action.nb);
       BoardSizeStore.emitChange();
       break;
     case PietConstant.ACTION_TYPE.ADD_COLUMN:
-      _add(TYPE_COLUMN);
+      _addColumn(action.nb);
       BoardSizeStore.emitChange();
       break;
     case PietConstant.ACTION_TYPE.DELETE_COLUMN:
-      _delete(TYPE_COLUMN);
+      _deleteColumn(action.nb);
       BoardSizeStore.emitChange();
       break;
 
     default:
       // no opp
+      break;
   }
 });
 

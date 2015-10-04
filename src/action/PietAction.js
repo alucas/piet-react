@@ -2,27 +2,47 @@ var Dispatcher = require("../dispatcher/Dispatcher");
 var PietConstant = require("../constant/PietConstant");
 
 var PietAction = {
-  addRow: function() {
+  addRow: function(nb) {
+    if (typeof nb === "undefined") {
+      nb = 1;
+    }
+
     Dispatcher.dispatch({
-      actionType: PietConstant.ACTION_TYPE.ADD_ROW
+      actionType: PietConstant.ACTION_TYPE.ADD_ROW,
+      nb: nb
     });
   },
 
-  deleteRow: function() {
+  deleteRow: function(nb) {
+    if (typeof nb === "undefined") {
+      nb = 1;
+    }
+
     Dispatcher.dispatch({
-      actionType: PietConstant.ACTION_TYPE.DELETE_ROW
+      actionType: PietConstant.ACTION_TYPE.DELETE_ROW,
+      nb: nb
     });
   },
 
-  addColumn: function() {
+  addColumn: function(nb) {
+    if (typeof nb === "undefined") {
+      nb = 1;
+    }
+
     Dispatcher.dispatch({
-      actionType: PietConstant.ACTION_TYPE.ADD_COLUMN
+      actionType: PietConstant.ACTION_TYPE.ADD_COLUMN,
+      nb: nb
     });
   },
 
-  deleteColumn: function() {
+  deleteColumn: function(nb) {
+    if (typeof nb === "undefined") {
+      nb = 1;
+    }
+
     Dispatcher.dispatch({
-      actionType: PietConstant.ACTION_TYPE.DELETE_COLUMN
+      actionType: PietConstant.ACTION_TYPE.DELETE_COLUMN,
+      nb: nb
     });
   }
 };
