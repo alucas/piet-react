@@ -25,10 +25,12 @@ html, body, #pietApp, #pietAppContainer {
   width: 200px;
 }
 
+.colorChooser,
 .boardProperties {
   padding: 10px;
   border-radius: 10px;
   background-color: #dddddd;
+  margin-bottom: 10px;
 }
 
 .boardResizer {
@@ -54,6 +56,41 @@ html, body, #pietApp, #pietAppContainer {
 .boardResizer button:hover {
   background-color: #2eac51;
 }
+
+.colorChooser div {
+  display: flex;
+}
+
+.colorChooser div div {
+  flex: 1;
+  height: 30px;
+}
+
+.colorChooser div div:hover {
+  border-radius: 10px;
+  transition: border-radius 0.5s;
+}
+
+.colorChooser .colorLight .colorRed {background-color: #f76C5C;}
+.colorChooser .colorLight .colorYellow {background-color: #f1e42f;}
+.colorChooser .colorLight .colorGreen {background-color: #4eec91;}
+.colorChooser .colorLight .colorCyan {background-color: #3adcbc;}
+.colorChooser .colorLight .colorBlue {background-color: #54b8eb;}
+.colorChooser .colorLight .colorMagenta {background-color: #bb79d6;}
+.colorChooser .colorNormal .colorRed {background-color: #e74c3c;}
+.colorChooser .colorNormal .colorYellow {background-color: #f1c40f;}
+.colorChooser .colorNormal .colorGreen {background-color: #2ecc71;}
+.colorChooser .colorNormal .colorCyan {background-color: #1abc9c;}
+.colorChooser .colorNormal .colorBlue {background-color: #3498db;}
+.colorChooser .colorNormal .colorMagenta {background-color: #9b59b6;}
+.colorChooser .colorDark .colorRed {background-color: #c72c1c;}
+.colorChooser .colorDark .colorYellow {background-color: #d1a40f;}
+.colorChooser .colorDark .colorGreen {background-color: #0eac51;}
+.colorChooser .colorDark .colorCyan {background-color: #0a9c7c;}
+.colorChooser .colorDark .colorBlue {background-color: #1478bb;}
+.colorChooser .colorDark .colorMagenta {background-color: #7b3996;}
+.colorChooser .colorWB .colorWhite {background-color: #eeeeee;}
+.colorChooser .colorWB .colorBlack {background-color: #2C3E50;}
 
 .boardContainer {
   display: flex;
