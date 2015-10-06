@@ -6,7 +6,7 @@ var EventEmitter = require("events").EventEmitter;
 var Dispatcher = require("../dispatcher/Dispatcher");
 var PietConstant = require("../constant/PietConstant");
 
-var CHANGE_EVENT = "change";
+var STORE_EVENT = "boardStore";
 
 var INIT_VALUE = [1, 1];
 
@@ -85,15 +85,15 @@ var BoardSizeStore = assign({}, EventEmitter.prototype, {
   },
 
   emitChange: function() {
-    this.emit(CHANGE_EVENT);
+    this.emit(STORE_EVENT);
   },
 
   addChangeListener: function(callback) {
-    this.on(CHANGE_EVENT, callback);
+    this.on(STORE_EVENT, callback);
   },
 
   removeChangeListener: function(callback) {
-    this.removeListener(CHANGE_EVENT, callback);
+    this.removeListener(STORE_EVENT, callback);
   }
 });
 
