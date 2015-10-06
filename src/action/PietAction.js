@@ -1,5 +1,5 @@
 var Dispatcher = require("../dispatcher/Dispatcher");
-var PietConstant = require("../constant/PietConstant");
+var ActionTypeConstant = require("../constant/ActionTypeConstant");
 
 var PietAction = {
   addRow: function(nb) {
@@ -8,7 +8,7 @@ var PietAction = {
     }
 
     Dispatcher.dispatch({
-      actionType: PietConstant.ACTION_TYPE.ADD_ROW,
+      actionType: ActionTypeConstant.ADD_ROW,
       nb: nb
     });
   },
@@ -19,7 +19,7 @@ var PietAction = {
     }
 
     Dispatcher.dispatch({
-      actionType: PietConstant.ACTION_TYPE.DELETE_ROW,
+      actionType: ActionTypeConstant.DELETE_ROW,
       nb: nb
     });
   },
@@ -30,7 +30,7 @@ var PietAction = {
     }
 
     Dispatcher.dispatch({
-      actionType: PietConstant.ACTION_TYPE.ADD_COLUMN,
+      actionType: ActionTypeConstant.ADD_COLUMN,
       nb: nb
     });
   },
@@ -41,7 +41,7 @@ var PietAction = {
     }
 
     Dispatcher.dispatch({
-      actionType: PietConstant.ACTION_TYPE.DELETE_COLUMN,
+      actionType: ActionTypeConstant.DELETE_COLUMN,
       nb: nb
     });
   }

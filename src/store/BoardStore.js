@@ -4,7 +4,7 @@ var assign = require("object-assign");
 var EventEmitter = require("events").EventEmitter;
 
 var Dispatcher = require("../dispatcher/Dispatcher");
-var PietConstant = require("../constant/PietConstant");
+var ActionTypeConstant = require("../constant/ActionTypeConstant");
 
 var STORE_EVENT = "boardStore";
 
@@ -99,19 +99,19 @@ var BoardSizeStore = assign({}, EventEmitter.prototype, {
 
 Dispatcher.register(function(action) {
   switch(action.actionType) {
-    case PietConstant.ACTION_TYPE.ADD_ROW:
+    case ActionTypeConstant.ADD_ROW:
       _addRow(action.nb);
       BoardSizeStore.emitChange();
       break;
-    case PietConstant.ACTION_TYPE.DELETE_ROW:
+    case ActionTypeConstant.DELETE_ROW:
       _deleteRow(action.nb);
       BoardSizeStore.emitChange();
       break;
-    case PietConstant.ACTION_TYPE.ADD_COLUMN:
+    case ActionTypeConstant.ADD_COLUMN:
       _addColumn(action.nb);
       BoardSizeStore.emitChange();
       break;
-    case PietConstant.ACTION_TYPE.DELETE_COLUMN:
+    case ActionTypeConstant.DELETE_COLUMN:
       _deleteColumn(action.nb);
       BoardSizeStore.emitChange();
       break;
