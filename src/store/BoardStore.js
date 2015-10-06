@@ -70,16 +70,7 @@ function _deleteColumn(nb) {
   });
 }
 
-function _delete(type, nb) {
-  if (_boardSize[type] - nb <= 1) {
-    _boardSize[type] = 1;
-    return;
-  }
-
-  _boardSize[type] -= nb;
-}
-
-var BoardSizeStore = assign({}, EventEmitter.prototype, {
+var BoardStore = assign({}, EventEmitter.prototype, {
   getBoard: function() {
     return _board;
   },
@@ -101,19 +92,19 @@ Dispatcher.register(function(action) {
   switch(action.actionType) {
     case ActionTypeConstant.ADD_ROW:
       _addRow(action.nb);
-      BoardSizeStore.emitChange();
+      BoardStore.emitChange();
       break;
     case ActionTypeConstant.DELETE_ROW:
       _deleteRow(action.nb);
-      BoardSizeStore.emitChange();
+      BoardStore.emitChange();
       break;
     case ActionTypeConstant.ADD_COLUMN:
       _addColumn(action.nb);
-      BoardSizeStore.emitChange();
+      BoardStore.emitChange();
       break;
     case ActionTypeConstant.DELETE_COLUMN:
       _deleteColumn(action.nb);
-      BoardSizeStore.emitChange();
+      BoardStore.emitChange();
       break;
 
     default:
@@ -122,4 +113,4 @@ Dispatcher.register(function(action) {
   }
 });
 
-module.exports = BoardSizeStore;
+module.exports = BoardStore;
