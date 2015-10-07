@@ -30,7 +30,7 @@ var PietApp = React.createClass({
         <Header />
         <div id="contentContainer">
           <ToolContainer color={this.state.color} />
-          <BoardContainer board={this.state.board} />
+          <BoardContainer color={this.state.color} board={this.state.board} />
         </div>
         <Footer />
       </div>

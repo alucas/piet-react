@@ -4,7 +4,7 @@ var ActionTypeConstant = require("../constant/ActionTypeConstant");
 var AppAction = {
   selectColor: function(color) {
     Dispatcher.dispatch({
-      actionType: ActionTypeConstant.SET_COLOR,
+      actionType: ActionTypeConstant.SELECT_COLOR,
       color: color
     });
   }

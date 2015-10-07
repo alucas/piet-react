@@ -9,7 +9,7 @@ var BoardAction = {
 
     Dispatcher.dispatch({
       actionType: ActionTypeConstant.ADD_ROW,
-      nb: nb
+      nb: nb,
     });
   },
 
@@ -20,7 +20,7 @@ var BoardAction = {
 
     Dispatcher.dispatch({
       actionType: ActionTypeConstant.DELETE_ROW,
-      nb: nb
+      nb: nb,
     });
   },
 
@@ -31,7 +31,7 @@ var BoardAction = {
 
     Dispatcher.dispatch({
       actionType: ActionTypeConstant.ADD_COLUMN,
-      nb: nb
+      nb: nb,
     });
   },
 
@@ -42,9 +42,18 @@ var BoardAction = {
 
     Dispatcher.dispatch({
       actionType: ActionTypeConstant.DELETE_COLUMN,
-      nb: nb
+      nb: nb,
     });
-  }
+  },
+
+  setColor: function(rowIndex, columnIndex, color) {
+    Dispatcher.dispatch({
+      actionType: ActionTypeConstant.SET_COLOR,
+      rowIndex: rowIndex,
+      columnIndex: columnIndex,
+      color: color,
+    });
+  },
 };
 
 module.exports = BoardAction;

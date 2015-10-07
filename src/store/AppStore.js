@@ -35,7 +35,7 @@ var AppStore = assign({}, EventEmitter.prototype, {
 
 Dispatcher.register(function(action) {
   switch(action.actionType) {
-    case ActionTypeConstant.SET_COLOR:
+    case ActionTypeConstant.SELECT_COLOR:
       _setColor(action.color);
       AppStore.emitChange();
       break;

@@ -2,6 +2,7 @@
 
 var React = require("react");
 
+var BoardAction = require("../action/BoardAction");
 var ColorConstant = require("../constant/ColorConstant");
 
 var BoardContainer = React.createClass({
@@ -22,6 +23,7 @@ var BoardContainer = React.createClass({
   },
 
   _handleClick: function(rowIndex, columnIndex) {
+    BoardAction.setColor(rowIndex, columnIndex, this.props.color);
   }
 })
 

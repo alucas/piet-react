@@ -71,6 +71,10 @@ function _deleteColumn(nb) {
   });
 }
 
+function _setColor(rowIndex, columnIndex, color) {
+  _board[rowIndex][columnIndex] = color;
+}
+
 var BoardStore = assign({}, EventEmitter.prototype, {
   getBoard: function() {
     return _board;
@@ -105,6 +109,10 @@ Dispatcher.register(function(action) {
       break;
     case ActionTypeConstant.DELETE_COLUMN:
       _deleteColumn(action.nb);
+      BoardStore.emitChange();
+      break;
+    case ActionTypeConstant.SET_COLOR:
+      _setColor(action.rowIndex, action.columnIndex, action.color);
       BoardStore.emitChange();
       break;
 
