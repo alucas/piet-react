@@ -83,26 +83,26 @@ html, body, #pietApp, #pietAppContainer {
   background-color: black;
 }
 
-.colorChooser .colorLRed {background-color: #f76C5C;}
-.colorChooser .colorLYellow {background-color: #f1e42f;}
-.colorChooser .colorLGreen {background-color: #4eec91;}
-.colorChooser .colorLCyan {background-color: #3adcbc;}
-.colorChooser .colorLBlue {background-color: #54b8eb;}
-.colorChooser .colorLMagenta {background-color: #bb79d6;}
-.colorChooser .colorNRed {background-color: #e74c3c;}
-.colorChooser .colorNYellow {background-color: #f1c40f;}
-.colorChooser .colorNGreen {background-color: #2ecc71;}
-.colorChooser .colorNCyan {background-color: #1abc9c;}
-.colorChooser .colorNBlue {background-color: #3498db;}
-.colorChooser .colorNMagenta {background-color: #9b59b6;}
-.colorChooser .colorDRed {background-color: #c72c1c;}
-.colorChooser .colorDYellow {background-color: #d1a40f;}
-.colorChooser .colorDGreen {background-color: #0eac51;}
-.colorChooser .colorDCyan {background-color: #0a9c7c;}
-.colorChooser .colorDBlue {background-color: #1478bb;}
-.colorChooser .colorDMagenta {background-color: #7b3996;}
-.colorChooser .colorNWhite {background-color: #eeeeee;}
-.colorChooser .colorNBlack {background-color: #2C3E50;}
+.colorLRed {background-color: #f76C5C;}
+.colorLYellow {background-color: #f1e42f;}
+.colorLGreen {background-color: #4eec91;}
+.colorLCyan {background-color: #3adcbc;}
+.colorLBlue {background-color: #54b8eb;}
+.colorLMagenta {background-color: #bb79d6;}
+.colorNRed {background-color: #e74c3c;}
+.colorNYellow {background-color: #f1c40f;}
+.colorNGreen {background-color: #2ecc71;}
+.colorNCyan {background-color: #1abc9c;}
+.colorNBlue {background-color: #3498db;}
+.colorNMagenta {background-color: #9b59b6;}
+.colorDRed {background-color: #c72c1c;}
+.colorDYellow {background-color: #d1a40f;}
+.colorDGreen {background-color: #0eac51;}
+.colorDCyan {background-color: #0a9c7c;}
+.colorDBlue {background-color: #1478bb;}
+.colorDMagenta {background-color: #7b3996;}
+.colorNWhite {background-color: #eeeeee;}
+.colorNBlack {background-color: #2C3E50;}
 
 .boardContainer {
   display: flex;
