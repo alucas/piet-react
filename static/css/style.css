@@ -57,40 +57,52 @@ html, body, #pietApp, #pietAppContainer {
   background-color: #2eac51;
 }
 
-.colorChooser div {
+.colorChooser {
   display: flex;
+  flex-flow: row wrap;
 }
 
-.colorChooser div div {
-  flex: 1;
+.colorChooser div {
+  flex: 16%;
   height: 30px;
 }
 
-.colorChooser div div:hover {
+.colorChooser div:hover {
   border-radius: 10px;
   transition: border-radius 0.5s;
 }
 
-.colorChooser .colorLight .colorRed {background-color: #f76C5C;}
-.colorChooser .colorLight .colorYellow {background-color: #f1e42f;}
-.colorChooser .colorLight .colorGreen {background-color: #4eec91;}
-.colorChooser .colorLight .colorCyan {background-color: #3adcbc;}
-.colorChooser .colorLight .colorBlue {background-color: #54b8eb;}
-.colorChooser .colorLight .colorMagenta {background-color: #bb79d6;}
-.colorChooser .colorNormal .colorRed {background-color: #e74c3c;}
-.colorChooser .colorNormal .colorYellow {background-color: #f1c40f;}
-.colorChooser .colorNormal .colorGreen {background-color: #2ecc71;}
-.colorChooser .colorNormal .colorCyan {background-color: #1abc9c;}
-.colorChooser .colorNormal .colorBlue {background-color: #3498db;}
-.colorChooser .colorNormal .colorMagenta {background-color: #9b59b6;}
-.colorChooser .colorDark .colorRed {background-color: #c72c1c;}
-.colorChooser .colorDark .colorYellow {background-color: #d1a40f;}
-.colorChooser .colorDark .colorGreen {background-color: #0eac51;}
-.colorChooser .colorDark .colorCyan {background-color: #0a9c7c;}
-.colorChooser .colorDark .colorBlue {background-color: #1478bb;}
-.colorChooser .colorDark .colorMagenta {background-color: #7b3996;}
-.colorChooser .colorWB .colorWhite {background-color: #eeeeee;}
-.colorChooser .colorWB .colorBlack {background-color: #2C3E50;}
+.selectedColor::before {
+  content: "";
+  display: block;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  margin: auto;
+  margin-top: 10px;
+  background-color: black;
+}
+
+.colorChooser .colorLRed {background-color: #f76C5C;}
+.colorChooser .colorLYellow {background-color: #f1e42f;}
+.colorChooser .colorLGreen {background-color: #4eec91;}
+.colorChooser .colorLCyan {background-color: #3adcbc;}
+.colorChooser .colorLBlue {background-color: #54b8eb;}
+.colorChooser .colorLMagenta {background-color: #bb79d6;}
+.colorChooser .colorNRed {background-color: #e74c3c;}
+.colorChooser .colorNYellow {background-color: #f1c40f;}
+.colorChooser .colorNGreen {background-color: #2ecc71;}
+.colorChooser .colorNCyan {background-color: #1abc9c;}
+.colorChooser .colorNBlue {background-color: #3498db;}
+.colorChooser .colorNMagenta {background-color: #9b59b6;}
+.colorChooser .colorDRed {background-color: #c72c1c;}
+.colorChooser .colorDYellow {background-color: #d1a40f;}
+.colorChooser .colorDGreen {background-color: #0eac51;}
+.colorChooser .colorDCyan {background-color: #0a9c7c;}
+.colorChooser .colorDBlue {background-color: #1478bb;}
+.colorChooser .colorDMagenta {background-color: #7b3996;}
+.colorChooser .colorNWhite {background-color: #eeeeee;}
+.colorChooser .colorNBlack {background-color: #2C3E50;}
 
 .boardContainer {
   display: flex;

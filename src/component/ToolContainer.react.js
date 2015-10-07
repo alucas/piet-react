@@ -7,7 +7,7 @@ var ToolContainer = React.createClass({
   render: function() {
     return <div className="toolContainer">
       <BoardProperties />
-      <ColorChooser />
+      <ColorChooser color={this.props.color} />
     </div>
   }
 })

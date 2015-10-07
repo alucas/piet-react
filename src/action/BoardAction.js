@@ -1,7 +1,7 @@
 var Dispatcher = require("../dispatcher/Dispatcher");
 var ActionTypeConstant = require("../constant/ActionTypeConstant");
 
-var PietAction = {
+var BoardAction = {
   addRow: function(nb) {
     if (typeof nb === "undefined") {
       nb = 1;
@@ -47,4 +47,4 @@ var PietAction = {
   }
 };
 
-module.exports = PietAction;
+module.exports = BoardAction;

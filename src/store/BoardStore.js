@@ -5,10 +5,11 @@ var EventEmitter = require("events").EventEmitter;
 
 var Dispatcher = require("../dispatcher/Dispatcher");
 var ActionTypeConstant = require("../constant/ActionTypeConstant");
+var ColorConstant = require("../constant/ColorConstant");
 
 var STORE_EVENT = "boardStore";
 
-var INIT_VALUE = [1, 1];
+var INIT_VALUE = ColorConstant.COLOR.NORMAL_WHITE;
 
 function _getInitValue() {
   return INIT_VALUE.slice(0);

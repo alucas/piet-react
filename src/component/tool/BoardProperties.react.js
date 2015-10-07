@@ -1,5 +1,5 @@
 var React = require("react");
-var PietAction = require("../../action/PietAction");
+var BoardAction = require("../../action/BoardAction");
 
 var BoardResizer = require("./BoardResizer.react")
 
@@ -12,19 +12,19 @@ var BoardProperties = React.createClass({
   },
 
   _handleAddRow: function() {
-    PietAction.addRow();
+    BoardAction.addRow();
   },
 
   _handleDeleteRow: function() {
-    PietAction.deleteRow();
+    BoardAction.deleteRow();
   },
 
   _handleAddColumn: function() {
-    PietAction.addColumn();
+    BoardAction.addColumn();
   },
 
   _handleDeleteColumn: function() {
-    PietAction.deleteColumn();
+    BoardAction.deleteColumn();
   }
 })
 

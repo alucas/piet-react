@@ -5,10 +5,11 @@ var EventEmitter = require("events").EventEmitter;
 
 var Dispatcher = require("../dispatcher/Dispatcher");
 var ActionTypeConstant = require("../constant/ActionTypeConstant");
+var ColorConstant = require("../constant/ColorConstant");
 
 var STORE_EVENT = "appStore";
 
-var _color = [1, 1];
+var _color = [ColorConstant.COLOR.NORMAL_WHITE];
 
 function _setColor(color) {
   _color = color;
