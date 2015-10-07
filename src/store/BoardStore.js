@@ -9,7 +9,7 @@ var ColorConstant = require("../constant/ColorConstant");
 
 var STORE_EVENT = "boardStore";
 
-var INIT_VALUE = ColorConstant.COLOR.NORMAL_WHITE;
+var INIT_VALUE = ColorConstant.COLOR.NORMAL_BLACK;
 
 function _getInitValue() {
   return INIT_VALUE.slice(0);
