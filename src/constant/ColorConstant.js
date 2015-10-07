@@ -1,18 +1,18 @@
-var keyMirror = require("keymirror");
+"use strict"
 
-var TYPE = keyMirror({
-  LIGHT: null,
-  NORMAL: null,
-  DARK: null,
-  RED: null,
-  YELLOW: null,
-  GREEN: null,
-  CYAN: null,
-  BLUE: null,
-  MAGENTA: null,
-  WHITE: null,
-  BLACK: null,
-});
+var TYPE = {
+  LIGHT: 1,
+  NORMAL: 2,
+  DARK: 3,
+  RED: 4,
+  YELLOW: 5,
+  GREEN: 6,
+  CYAN: 7,
+  BLUE: 8,
+  MAGENTA: 9,
+  WHITE: 10,
+  BLACK: 11,
+};
 
 var COLOR = {
   LIGHT_RED:[TYPE.LIGHT, TYPE.RED],
@@ -37,7 +37,30 @@ var COLOR = {
   NORMAL_BLACK:[TYPE.NORMAL, TYPE.BLACK],
 };
 
+var CLASSNAME = {};
+CLASSNAME[COLOR.LIGHT_RED] = "colorLRed";
+CLASSNAME[COLOR.LIGHT_YELLOW] = "colorLYellow";
+CLASSNAME[COLOR.LIGHT_GREEN] = "colorLGreen";
+CLASSNAME[COLOR.LIGHT_CYAN] = "colorLCyan";
+CLASSNAME[COLOR.LIGHT_BLUE] = "colorLBlue";
+CLASSNAME[COLOR.LIGHT_MAGENTA] = "colorLMagenta";
+CLASSNAME[COLOR.NORMAL_RED] = "colorNRed";
+CLASSNAME[COLOR.NORMAL_YELLOW] = "colorNYellow";
+CLASSNAME[COLOR.NORMAL_GREEN] = "colorNGreen";
+CLASSNAME[COLOR.NORMAL_CYAN] = "colorNCyan";
+CLASSNAME[COLOR.NORMAL_BLUE] = "colorNBlue";
+CLASSNAME[COLOR.NORMAL_MAGENTA] = "colorNMagenta";
+CLASSNAME[COLOR.DARK_RED] = "colorDRed";
+CLASSNAME[COLOR.DARK_YELLOW] = "colorDYellow";
+CLASSNAME[COLOR.DARK_GREEN] = "colorDGreen";
+CLASSNAME[COLOR.DARK_CYAN] = "colorDCyan";
+CLASSNAME[COLOR.DARK_BLUE] = "colorDBlue";
+CLASSNAME[COLOR.DARK_MAGENTA] = "colorDMagenta";
+CLASSNAME[COLOR.NORMAL_WHITE] = "colorNWhite";
+CLASSNAME[COLOR.NORMAL_BLACK] = "colorNBlack";
+
 module.exports = {
   TYPE: TYPE,
   COLOR: COLOR,
+  CLASSNAME: CLASSNAME,
 };
