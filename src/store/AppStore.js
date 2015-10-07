@@ -9,7 +9,7 @@ var ColorConstant = require("../constant/ColorConstant");
 
 var STORE_EVENT = "appStore";
 
-var _color = [ColorConstant.COLOR.NORMAL_WHITE];
+var _color = ColorConstant.COLOR.NORMAL_WHITE;
 
 function _setColor(color) {
   _color = color;
