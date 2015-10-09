@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/js/'
+    publicPath: '/js/'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),

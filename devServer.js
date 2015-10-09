@@ -13,9 +13,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 
 app.use(require('webpack-hot-middleware')(compiler));
 
-app.get('/static/css/style.css', function(req, res) {
-  res.sendFile(path.join(__dirname, './static/css/style.css'));
-});
+app.use(express.static('static'));
 
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
