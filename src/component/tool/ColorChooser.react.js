@@ -44,7 +44,7 @@ var ColorChooser = React.createClass({
           AppAction.selectColor(color.value);
         };
 
-        let selected = color == selectedColor;
+        var selected = color == selectedColor;
 
         return <div key={index} className={classes} onClick={handleClick}></div>
       })}
