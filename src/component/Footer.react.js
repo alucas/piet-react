@@ -1,10 +1,12 @@
-var React = require("react");
+"use strict"
 
-var Footer = React.createClass({
-  render: function() {
-    return <footer id="pietFooter">
-    </footer>
+import React, { Component } from "react";
+
+export class Footer extends Component {
+  render() {
+    return (
+      <footer id="pietFooter">
+      </footer>
+    );
   }
-})
-
-module.exports = Footer;
+}

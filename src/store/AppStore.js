@@ -1,21 +1,21 @@
 "use strict";
 
-var assign = require("object-assign");
-var EventEmitter = require("events").EventEmitter;
+import assign from "object-assign";
+import { EventEmitter } from "events";
 
-var Dispatcher = require("../dispatcher/Dispatcher");
-var ActionTypeConstant = require("../constant/ActionTypeConstant");
-var ColorConstant = require("../constant/ColorConstant");
+import { dispatcher } from "../dispatcher/Dispatcher";
+import { ActionTypeConstant } from "../constant/ActionTypeConstant";
+import { COLOR } from "../constant/ColorConstant";
 
 var STORE_EVENT = "appStore";
 
-var _color = ColorConstant.COLOR.NORMAL_WHITE;
+var _color = COLOR.NORMAL_WHITE;
 
 function _setColor(color) {
   _color = color;
 }
 
-var AppStore = assign({}, EventEmitter.prototype, {
+export var AppStore = assign({}, EventEmitter.prototype, {
   getColor: function() {
     return _color;
   },
@@ -33,7 +33,7 @@ var AppStore = assign({}, EventEmitter.prototype, {
   }
 });
 
-Dispatcher.register(function(action) {
+dispatcher.register(function(action) {
   switch(action.actionType) {
     case ActionTypeConstant.SELECT_COLOR:
       _setColor(action.color);
@@ -45,5 +45,3 @@ Dispatcher.register(function(action) {
       break;
   }
 });
-
-module.exports = AppStore;

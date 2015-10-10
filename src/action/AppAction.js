@@ -1,13 +1,13 @@
-var Dispatcher = require("../dispatcher/Dispatcher");
-var ActionTypeConstant = require("../constant/ActionTypeConstant");
+"use strict"
 
-var AppAction = {
+import { dispatcher } from "../dispatcher/Dispatcher";
+import { ActionTypeConstant } from "../constant/ActionTypeConstant";
+
+export var AppAction = {
   selectColor: function(color) {
-    Dispatcher.dispatch({
+    dispatcher.dispatch({
       actionType: ActionTypeConstant.SELECT_COLOR,
       color: color
     });
   }
 };
-
-module.exports = AppAction;

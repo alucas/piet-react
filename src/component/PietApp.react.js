@@ -1,52 +1,51 @@
-var React = require("react");
-var BoardStore = require("../store/BoardStore");
-var AppStore = require("../store/AppStore");
+"use strict"
 
-var Header = require("./Header.react");
-var ToolContainer = require("./ToolContainer.react")
-var BoardContainer = require("./BoardContainer.react")
-var Footer = require("./Footer.react");
+import React from "react";
 
-var PietApp = React.createClass({
-  getInitialState: function() {
-    return {
+import { BoardStore } from "../store/BoardStore";
+import { AppStore } from "../store/AppStore";
+
+import { Header } from "./Header.react";
+import { ToolContainer } from "./ToolContainer.react";
+import { BoardContainer } from "./BoardContainer.react";
+import { Footer } from "./Footer.react";
+
+export class PietApp extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
       board: BoardStore.getBoard(),
-      color: AppStore.getColor()
+      color: AppStore.getColor(),
     };
-  },
 
-  componentDidMount: function() {
     BoardStore.addChangeListener(this._boardStoreHandler);
     AppStore.addChangeListener(this._appStoreHandler);
-  },
+  }
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     BoardStore.removeChangeListener(this._boardStoreHandler);
     AppStore.removeChangeListener(this._appStoreHandler);
-  },
+  }
 
-  render: function() {
-    return <div id="pietAppContainer">
+  render() {
+    return (
+      <div id="pietAppContainer">
         <Header />
-        <div id="contentContainer">
-          <ToolContainer color={this.state.color} />
-          <BoardContainer color={this.state.color} board={this.state.board} />
+          <div id="contentContainer">
+            <ToolContainer color={this.state.color} />
+            <BoardContainer color={this.state.color} board={this.state.board} />
         </div>
         <Footer />
       </div>
-  },
-
-  _boardStoreHandler: function() {
-    this.setState({
-      board: BoardStore.getBoard()
-    });
-  },
-
-  _appStoreHandler: function() {
-    this.setState({
-      color: AppStore.getColor()
-    });
+    );
   }
-});
 
-module.exports = PietApp;
+  _boardStoreHandler = () => {
+    this.setState({board: BoardStore.getBoard()});
+  }
+
+  _appStoreHandler = () => {
+    this.setState({color: AppStore.getColor()});
+  }
+};

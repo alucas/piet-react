@@ -1,15 +1,15 @@
 "use strict";
 
-var assign = require("object-assign");
-var EventEmitter = require("events").EventEmitter;
+import assign from "object-assign";
+import { EventEmitter } from "events";
 
-var Dispatcher = require("../dispatcher/Dispatcher");
-var ActionTypeConstant = require("../constant/ActionTypeConstant");
-var ColorConstant = require("../constant/ColorConstant");
+import { dispatcher } from "../dispatcher/Dispatcher";
+import { ActionTypeConstant } from "../constant/ActionTypeConstant";
+import { COLOR } from "../constant/ColorConstant";
 
 var STORE_EVENT = "boardStore";
 
-var INIT_VALUE = ColorConstant.COLOR.NORMAL_BLACK;
+var INIT_VALUE = COLOR.NORMAL_BLACK;
 
 function _getInitValue() {
   return INIT_VALUE.slice(0);
@@ -31,7 +31,7 @@ function _getBoardNbColumn() {
 }
 
 function _addRow(nb) {
-  _board.push(Array.apply(null, Array(_getBoardNbColumn())).map(function() {
+  _board.push(Array.apply(null, Array(_getBoardNbColumn())).map(() => {
     return _getInitValue();
   }));
 }
@@ -51,7 +51,7 @@ function _deleteRow(nb) {
 }
 
 function _addColumn(nb) {
-  _board.map(function(row) {
+  _board.map((row) => {
     return row.push(_getInitValue());
   });
 }
@@ -66,7 +66,7 @@ function _deleteColumn(nb) {
     nb = nbColumn - 1;
   }
 
-  _board.map(function(row) {
+  _board.map((row) => {
     return row.splice(nbColumn - nb, nb);
   });
 }
@@ -75,7 +75,7 @@ function _setColor(rowIndex, columnIndex, color) {
   _board[rowIndex][columnIndex] = color;
 }
 
-var BoardStore = assign({}, EventEmitter.prototype, {
+export var BoardStore = assign({}, EventEmitter.prototype, {
   getBoard: function() {
     return _board;
   },
@@ -93,7 +93,7 @@ var BoardStore = assign({}, EventEmitter.prototype, {
   }
 });
 
-Dispatcher.register(function(action) {
+dispatcher.register((action) => {
   switch(action.actionType) {
     case ActionTypeConstant.ADD_ROW:
       _addRow(action.nb);
@@ -121,5 +121,3 @@ Dispatcher.register(function(action) {
       break;
   }
 });
-
-module.exports = BoardStore;

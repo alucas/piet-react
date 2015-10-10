@@ -1,10 +1,12 @@
-var React = require("react");
+"use strict"
 
-var Header = React.createClass({
-  render: function() {
-    return <header id="pietHeader">
-    </header>
+import React from "react";
+
+export class Header extends React.Component {
+  render() {
+    return (
+      <header id="pietHeader">
+      </header>
+    );
   }
-});
-
-module.exports = Header;
+};

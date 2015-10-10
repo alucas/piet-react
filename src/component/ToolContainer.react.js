@@ -1,15 +1,17 @@
-var React = require("react");
+"use strict"
 
-var BoardProperties = require("./tool/BoardProperties.react")
-var ColorChooser = require("./tool/ColorChooser.react")
+import React from "react";
 
-var ToolContainer = React.createClass({
-  render: function() {
-    return <div className="toolContainer">
-      <BoardProperties />
-      <ColorChooser color={this.props.color} />
-    </div>
+import { BoardProperties } from "./tool/BoardProperties.react";
+import { ColorChooser } from "./tool/ColorChooser.react";
+
+export class ToolContainer extends React.Component {
+  render() {
+    return (
+      <div className="toolContainer">
+        <BoardProperties />
+        <ColorChooser color={this.props.color} />
+      </div>
+    );
   }
-})
-
-module.exports = ToolContainer;
+}

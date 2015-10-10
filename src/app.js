@@ -1,5 +1,5 @@
-var React = require("react");
-var PietApp = require("./component/PietApp.react");
+import React from "react";
+import { PietApp } from "./component/PietApp.react";
 
 React.render(
   <PietApp />,

@@ -1,31 +1,33 @@
-var React = require("react");
-var BoardAction = require("../../action/BoardAction");
+"use strict"
 
-var BoardResizer = require("./BoardResizer.react")
+import React from "react";
 
-var BoardProperties = React.createClass({
-  render: function() {
-    return <div className="boardProperties">
-      <BoardResizer label="Row" handleAdd={this._handleAddRow} handleDelete={this._handleDeleteRow} />
-      <BoardResizer label="Column" handleAdd={this._handleAddColumn} handleDelete={this._handleDeleteColumn} />
-    </div>
-  },
+import { BoardAction } from "../../action/BoardAction";
+import { BoardResizer } from "./BoardResizer.react";
 
-  _handleAddRow: function() {
+export class BoardProperties extends React.Component {
+  render() {
+    return (
+      <div className="boardProperties">
+        <BoardResizer label="Row" handleAdd={this._handleAddRow} handleDelete={this._handleDeleteRow} />
+        <BoardResizer label="Column" handleAdd={this._handleAddColumn} handleDelete={this._handleDeleteColumn} />
+      </div>
+    );
+  }
+
+  _handleAddRow() {
     BoardAction.addRow();
-  },
+  }
 
-  _handleDeleteRow: function() {
+  _handleDeleteRow() {
     BoardAction.deleteRow();
-  },
+  }
 
-  _handleAddColumn: function() {
+  _handleAddColumn() {
     BoardAction.addColumn();
-  },
+  }
 
-  _handleDeleteColumn: function() {
+  _handleDeleteColumn() {
     BoardAction.deleteColumn();
   }
-})
-
-module.exports = BoardProperties;
+}

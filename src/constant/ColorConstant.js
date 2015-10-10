@@ -1,6 +1,6 @@
 "use strict"
 
-var TYPE = {
+export var TYPE = {
   LIGHT: 1,
   NORMAL: 2,
   DARK: 3,
@@ -14,7 +14,7 @@ var TYPE = {
   BLACK: 11,
 };
 
-var COLOR = {
+export var COLOR = {
   LIGHT_RED:[TYPE.LIGHT, TYPE.RED],
   LIGHT_YELLOW:[TYPE.LIGHT, TYPE.YELLOW],
   LIGHT_GREEN:[TYPE.LIGHT, TYPE.GREEN],
@@ -37,30 +37,25 @@ var COLOR = {
   NORMAL_BLACK:[TYPE.NORMAL, TYPE.BLACK],
 };
 
-var CLASSNAME = {};
-CLASSNAME[COLOR.LIGHT_RED] = "colorLRed";
-CLASSNAME[COLOR.LIGHT_YELLOW] = "colorLYellow";
-CLASSNAME[COLOR.LIGHT_GREEN] = "colorLGreen";
-CLASSNAME[COLOR.LIGHT_CYAN] = "colorLCyan";
-CLASSNAME[COLOR.LIGHT_BLUE] = "colorLBlue";
-CLASSNAME[COLOR.LIGHT_MAGENTA] = "colorLMagenta";
-CLASSNAME[COLOR.NORMAL_RED] = "colorNRed";
-CLASSNAME[COLOR.NORMAL_YELLOW] = "colorNYellow";
-CLASSNAME[COLOR.NORMAL_GREEN] = "colorNGreen";
-CLASSNAME[COLOR.NORMAL_CYAN] = "colorNCyan";
-CLASSNAME[COLOR.NORMAL_BLUE] = "colorNBlue";
-CLASSNAME[COLOR.NORMAL_MAGENTA] = "colorNMagenta";
-CLASSNAME[COLOR.DARK_RED] = "colorDRed";
-CLASSNAME[COLOR.DARK_YELLOW] = "colorDYellow";
-CLASSNAME[COLOR.DARK_GREEN] = "colorDGreen";
-CLASSNAME[COLOR.DARK_CYAN] = "colorDCyan";
-CLASSNAME[COLOR.DARK_BLUE] = "colorDBlue";
-CLASSNAME[COLOR.DARK_MAGENTA] = "colorDMagenta";
-CLASSNAME[COLOR.NORMAL_WHITE] = "colorNWhite";
-CLASSNAME[COLOR.NORMAL_BLACK] = "colorNBlack";
-
-module.exports = {
-  TYPE: TYPE,
-  COLOR: COLOR,
-  CLASSNAME: CLASSNAME,
+export var CLASSNAME = {
+  [COLOR.LIGHT_RED]: "colorLRed",
+  [COLOR.LIGHT_YELLOW]: "colorLYellow",
+  [COLOR.LIGHT_GREEN]: "colorLGreen",
+  [COLOR.LIGHT_CYAN]: "colorLCyan",
+  [COLOR.LIGHT_BLUE]: "colorLBlue",
+  [COLOR.LIGHT_MAGENTA]: "colorLMagenta",
+  [COLOR.NORMAL_RED]: "colorNRed",
+  [COLOR.NORMAL_YELLOW]: "colorNYellow",
+  [COLOR.NORMAL_GREEN]: "colorNGreen",
+  [COLOR.NORMAL_CYAN]: "colorNCyan",
+  [COLOR.NORMAL_BLUE]: "colorNBlue",
+  [COLOR.NORMAL_MAGENTA]: "colorNMagenta",
+  [COLOR.DARK_RED]: "colorDRed",
+  [COLOR.DARK_YELLOW]: "colorDYellow",
+  [COLOR.DARK_GREEN]: "colorDGreen",
+  [COLOR.DARK_CYAN]: "colorDCyan",
+  [COLOR.DARK_BLUE]: "colorDBlue",
+  [COLOR.DARK_MAGENTA]: "colorDMagenta",
+  [COLOR.NORMAL_WHITE]: "colorNWhite",
+  [COLOR.NORMAL_BLACK]: "colorNBlack",
 };

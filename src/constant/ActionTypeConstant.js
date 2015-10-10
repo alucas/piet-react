@@ -1,10 +1,10 @@
-var keyMirror = require("keymirror");
+"use strict"
 
-module.exports = keyMirror({
-  ADD_ROW: null,
-  DELETE_ROW: null,
-  ADD_COLUMN: null,
-  DELETE_COLUMN: null,
-  SELECT_COLOR: null,
-  SET_COLOR: null,
-});
+export var ActionTypeConstant = {
+  ADD_ROW: 1,
+  DELETE_ROW: 2,
+  ADD_COLUMN: 3,
+  DELETE_COLUMN: 4,
+  SELECT_COLOR: 5,
+  SET_COLOR: 6,
+};
