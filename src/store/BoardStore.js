@@ -1,4 +1,3 @@
-import assign from 'object-assign';
 import { EventEmitter } from 'events';
 
 import dispatcher from '../dispatcher/Dispatcher';
@@ -74,7 +73,7 @@ function _setColor(rowIndex, columnIndex, color) {
   _board[rowIndex][columnIndex] = color;
 }
 
-const BoardStore = assign({}, EventEmitter.prototype, {
+const BoardStore = Object.assign({}, EventEmitter.prototype, {
   getBoard: function() {
     return _board;
   },

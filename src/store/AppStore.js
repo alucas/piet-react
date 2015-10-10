@@ -1,4 +1,3 @@
-import assign from 'object-assign';
 import { EventEmitter } from 'events';
 
 import dispatcher from '../dispatcher/Dispatcher';
@@ -13,7 +12,7 @@ function _setColor(color) {
   _color = color;
 }
 
-const AppStore = assign({}, EventEmitter.prototype, {
+const AppStore = Object.assign({}, EventEmitter.prototype, {
   getColor: function() {
     return _color;
   },
