@@ -2,7 +2,7 @@ import assign from 'object-assign';
 import { EventEmitter } from 'events';
 
 import { dispatcher } from '../dispatcher/Dispatcher';
-import { ActionTypeConstant } from '../constant/ActionTypeConstant';
+import * as ActionType from '../constant/ActionType';
 import { COLOR } from '../constant/ColorConstant';
 
 var STORE_EVENT = 'appStore';
@@ -33,7 +33,7 @@ export var AppStore = assign({}, EventEmitter.prototype, {
 
 dispatcher.register(function(action) {
   switch(action.actionType) {
-    case ActionTypeConstant.SELECT_COLOR:
+    case ActionType.SELECT_COLOR:
       _setColor(action.color);
       AppStore.emitChange();
       break;

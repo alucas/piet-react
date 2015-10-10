@@ -2,7 +2,7 @@ import assign from 'object-assign';
 import { EventEmitter } from 'events';
 
 import { dispatcher } from '../dispatcher/Dispatcher';
-import { ActionTypeConstant } from '../constant/ActionTypeConstant';
+import * as ActionType from '../constant/ActionType';
 import { COLOR } from '../constant/ColorConstant';
 
 var STORE_EVENT = 'boardStore';
@@ -93,23 +93,23 @@ export var BoardStore = assign({}, EventEmitter.prototype, {
 
 dispatcher.register((action) => {
   switch(action.actionType) {
-    case ActionTypeConstant.ADD_ROW:
+    case ActionType.ADD_ROW:
       _addRow(action.nb);
       BoardStore.emitChange();
       break;
-    case ActionTypeConstant.DELETE_ROW:
+    case ActionType.DELETE_ROW:
       _deleteRow(action.nb);
       BoardStore.emitChange();
       break;
-    case ActionTypeConstant.ADD_COLUMN:
+    case ActionType.ADD_COLUMN:
       _addColumn(action.nb);
       BoardStore.emitChange();
       break;
-    case ActionTypeConstant.DELETE_COLUMN:
+    case ActionType.DELETE_COLUMN:
       _deleteColumn(action.nb);
       BoardStore.emitChange();
       break;
-    case ActionTypeConstant.SET_COLOR:
+    case ActionType.SET_COLOR:
       _setColor(action.rowIndex, action.columnIndex, action.color);
       BoardStore.emitChange();
       break;

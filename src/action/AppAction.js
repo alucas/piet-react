@@ -1,10 +1,10 @@
 import { dispatcher } from '../dispatcher/Dispatcher';
-import { ActionTypeConstant } from '../constant/ActionTypeConstant';
+import * as ActionType from '../constant/ActionType';
 
 export var AppAction = {
   selectColor: function(color) {
     dispatcher.dispatch({
-      actionType: ActionTypeConstant.SELECT_COLOR,
+      actionType: ActionType.SELECT_COLOR,
       color: color
     });
   }

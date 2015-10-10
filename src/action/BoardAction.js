@@ -1,38 +1,38 @@
 import { dispatcher } from '../dispatcher/Dispatcher';
-import { ActionTypeConstant } from '../constant/ActionTypeConstant';
+import * as ActionType from '../constant/ActionType';
 
 export var BoardAction = {
   addRow: function(nb = 1) {
     dispatcher.dispatch({
-      actionType: ActionTypeConstant.ADD_ROW,
+      actionType: ActionType.ADD_ROW,
       nb: nb,
     });
   },
 
   deleteRow: function(nb = 1) {
     dispatcher.dispatch({
-      actionType: ActionTypeConstant.DELETE_ROW,
+      actionType: ActionType.DELETE_ROW,
       nb: nb,
     });
   },
 
   addColumn: function(nb = 1) {
     dispatcher.dispatch({
-      actionType: ActionTypeConstant.ADD_COLUMN,
+      actionType: ActionType.ADD_COLUMN,
       nb: nb,
     });
   },
 
   deleteColumn: function(nb = 1) {
     dispatcher.dispatch({
-      actionType: ActionTypeConstant.DELETE_COLUMN,
+      actionType: ActionType.DELETE_COLUMN,
       nb: nb,
     });
   },
 
   setColor: function(rowIndex, columnIndex, color) {
     dispatcher.dispatch({
-      actionType: ActionTypeConstant.SET_COLOR,
+      actionType: ActionType.SET_COLOR,
       rowIndex: rowIndex,
       columnIndex: columnIndex,
       color: color,
