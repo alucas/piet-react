@@ -1,4 +1,4 @@
-export var TYPE = {
+export const TYPE = {
   LIGHT: 1,
   NORMAL: 2,
   DARK: 3,
@@ -12,7 +12,7 @@ export var TYPE = {
   BLACK: 11,
 };
 
-export var COLOR = {
+export const COLOR = {
   LIGHT_RED:[TYPE.LIGHT, TYPE.RED],
   LIGHT_YELLOW:[TYPE.LIGHT, TYPE.YELLOW],
   LIGHT_GREEN:[TYPE.LIGHT, TYPE.GREEN],
@@ -35,7 +35,7 @@ export var COLOR = {
   NORMAL_BLACK:[TYPE.NORMAL, TYPE.BLACK],
 };
 
-export var CLASSNAME = {
+export const CLASSNAME = {
   [COLOR.LIGHT_RED]: 'colorLRed',
   [COLOR.LIGHT_YELLOW]: 'colorLYellow',
   [COLOR.LIGHT_GREEN]: 'colorLGreen',
