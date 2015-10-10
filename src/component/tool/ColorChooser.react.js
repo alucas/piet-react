@@ -1,7 +1,7 @@
 import React from 'react';
 import ClassNames from 'classnames';
 
-import { AppAction } from '../../action/AppAction';
+import AppAction from '../../action/AppAction';
 import { COLOR } from '../../constant/ColorConstant';
 
 var _colors = [
@@ -27,7 +27,7 @@ var _colors = [
   {className: 'colorNBlack', value:COLOR.NORMAL_BLACK},
 ];
 
-export class ColorChooser extends React.Component {
+export default class ColorChooser extends React.Component {
   render() {
     let selectedColor = this.props.color;
 

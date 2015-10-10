@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { BoardAction } from '../action/BoardAction';
+import BoardAction from '../action/BoardAction';
 import { CLASSNAME } from '../constant/ColorConstant';
 
-export class BoardContainer extends React.Component {
+export default class BoardContainer extends React.Component {
   render() {
     return (
       <div className="boardContainer"> {

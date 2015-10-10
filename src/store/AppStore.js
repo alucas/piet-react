@@ -1,7 +1,7 @@
 import assign from 'object-assign';
 import { EventEmitter } from 'events';
 
-import { dispatcher } from '../dispatcher/Dispatcher';
+import dispatcher from '../dispatcher/Dispatcher';
 import * as ActionType from '../constant/ActionType';
 import { COLOR } from '../constant/ColorConstant';
 
@@ -13,7 +13,7 @@ function _setColor(color) {
   _color = color;
 }
 
-export var AppStore = assign({}, EventEmitter.prototype, {
+const AppStore = assign({}, EventEmitter.prototype, {
   getColor: function() {
     return _color;
   },
@@ -43,3 +43,5 @@ dispatcher.register(function(action) {
       break;
   }
 });
+
+export default AppStore;

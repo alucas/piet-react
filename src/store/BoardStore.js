@@ -1,10 +1,10 @@
 import assign from 'object-assign';
 import { EventEmitter } from 'events';
 
-import { dispatcher } from '../dispatcher/Dispatcher';
+import dispatcher from '../dispatcher/Dispatcher';
 import * as ActionType from '../constant/ActionType';
 import { COLOR } from '../constant/ColorConstant';
-import { AppStore } from '../store/AppStore';
+import AppStore from '../store/AppStore';
 
 var STORE_EVENT = 'boardStore';
 
@@ -74,7 +74,7 @@ function _setColor(rowIndex, columnIndex, color) {
   _board[rowIndex][columnIndex] = color;
 }
 
-export var BoardStore = assign({}, EventEmitter.prototype, {
+const BoardStore = assign({}, EventEmitter.prototype, {
   getBoard: function() {
     return _board;
   },
@@ -120,3 +120,5 @@ dispatcher.register((action) => {
       break;
   }
 });
+
+export default BoardStore;

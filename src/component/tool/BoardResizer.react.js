@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class BoardResizer extends React.Component {
+export default class BoardResizer extends React.Component {
   render() {
     return (
       <div className="boardResizer">

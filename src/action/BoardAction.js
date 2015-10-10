@@ -1,7 +1,7 @@
-import { dispatcher } from '../dispatcher/Dispatcher';
+import dispatcher from '../dispatcher/Dispatcher';
 import * as ActionType from '../constant/ActionType';
 
-export var BoardAction = {
+const BoardAction = {
   addRow: function(nb = 1) {
     dispatcher.dispatch({
       actionType: ActionType.ADD_ROW,
@@ -39,3 +39,5 @@ export var BoardAction = {
     });
   },
 };
+
+export default BoardAction;

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { BoardAction } from '../../action/BoardAction';
-import { BoardResizer } from './BoardResizer.react';
+import BoardAction from '../../action/BoardAction';
+import BoardResizer from './BoardResizer.react';
 
-export class BoardProperties extends React.Component {
+export default class BoardProperties extends React.Component {
   render() {
     return (
       <div className="boardProperties">
