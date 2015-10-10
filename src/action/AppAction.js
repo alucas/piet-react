@@ -1,7 +1,5 @@
-"use strict"
-
-import { dispatcher } from "../dispatcher/Dispatcher";
-import { ActionTypeConstant } from "../constant/ActionTypeConstant";
+import { dispatcher } from '../dispatcher/Dispatcher';
+import { ActionTypeConstant } from '../constant/ActionTypeConstant';
 
 export var AppAction = {
   selectColor: function(color) {

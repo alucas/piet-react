@@ -1,13 +1,11 @@
-"use strict";
+import assign from 'object-assign';
+import { EventEmitter } from 'events';
 
-import assign from "object-assign";
-import { EventEmitter } from "events";
+import { dispatcher } from '../dispatcher/Dispatcher';
+import { ActionTypeConstant } from '../constant/ActionTypeConstant';
+import { COLOR } from '../constant/ColorConstant';
 
-import { dispatcher } from "../dispatcher/Dispatcher";
-import { ActionTypeConstant } from "../constant/ActionTypeConstant";
-import { COLOR } from "../constant/ColorConstant";
-
-var STORE_EVENT = "boardStore";
+var STORE_EVENT = 'boardStore';
 
 var INIT_VALUE = COLOR.NORMAL_BLACK;
 

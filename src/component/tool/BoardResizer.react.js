@@ -1,6 +1,4 @@
-"use strict"
-
-import React from "react";
+import React from 'react';
 
 export class BoardResizer extends React.Component {
   render() {

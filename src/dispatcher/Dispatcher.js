@@ -1,5 +1,3 @@
-"use strict"
-
-import { Dispatcher } from "flux";
+import { Dispatcher } from 'flux';
 
 export var dispatcher = new Dispatcher();

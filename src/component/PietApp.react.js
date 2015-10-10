@@ -1,14 +1,12 @@
-"use strict"
+import React from 'react';
 
-import React from "react";
+import { BoardStore } from '../store/BoardStore';
+import { AppStore } from '../store/AppStore';
 
-import { BoardStore } from "../store/BoardStore";
-import { AppStore } from "../store/AppStore";
-
-import { Header } from "./Header.react";
-import { ToolContainer } from "./ToolContainer.react";
-import { BoardContainer } from "./BoardContainer.react";
-import { Footer } from "./Footer.react";
+import { Header } from './Header.react';
+import { ToolContainer } from './ToolContainer.react';
+import { BoardContainer } from './BoardContainer.react';
+import { Footer } from './Footer.react';
 
 export class PietApp extends React.Component {
   constructor() {

@@ -1,6 +1,6 @@
-jest.dontMock("../BoardResizer.react");
+jest.dontMock('../BoardResizer.react');
 
-describe("BoardResizer", function() {
+describe('BoardResizer', function() {
   var React;
   var TestUtils;
   var BoardResizer;
@@ -32,8 +32,8 @@ describe("BoardResizer", function() {
     BoardResizer = require('../BoardResizer.react');
   //});
 
-  it("should have a label set", function() {
-    var myLabel = "myLabel";
+  it('should have a label set', function() {
+    var myLabel = 'myLabel';
 
     var boardResizer = TestUtils.renderIntoDocument(
       <BoardResizer label={myLabel} />
@@ -43,7 +43,7 @@ describe("BoardResizer", function() {
     expect(React.findDOMNode(label).textContent).toEqual(myLabel);
   });
 
-  it("should have two buttons", function() {
+  it('should have two buttons', function() {
     var boardResizer = TestUtils.renderIntoDocument(
       <BoardResizer />
     );
@@ -52,7 +52,7 @@ describe("BoardResizer", function() {
     expect(buttons.length).toBe(2);
   });
 
-  it("should call the delete callback when the first button is clicked", function() {
+  it('should call the delete callback when the first button is clicked', function() {
     var boardResizer = TestUtils.renderIntoDocument(
       <BoardResizer handleAdd={addFn} handleDelete={deleteFn} />
     );
@@ -62,7 +62,7 @@ describe("BoardResizer", function() {
     expectClickThruDelete(buttons[0]);
   });
 
-  it("should call the add callback when the second button is clicked", function() {
+  it('should call the add callback when the second button is clicked', function() {
     var boardResizer = TestUtils.renderIntoDocument(
       <BoardResizer handleAdd={addFn} handleDelete={deleteFn} />
     );

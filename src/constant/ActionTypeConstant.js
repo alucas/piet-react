@@ -1,5 +1,3 @@
-"use strict"
-
 export var ActionTypeConstant = {
   ADD_ROW: 1,
   DELETE_ROW: 2,

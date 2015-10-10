@@ -1,9 +1,7 @@
-"use strict"
+import React from 'react';
 
-import React from "react";
-
-import { BoardAction } from "../action/BoardAction";
-import { CLASSNAME } from "../constant/ColorConstant";
+import { BoardAction } from '../action/BoardAction';
+import { CLASSNAME } from '../constant/ColorConstant';
 
 export class BoardContainer extends React.Component {
   render() {
@@ -16,7 +14,7 @@ export class BoardContainer extends React.Component {
                 return (
                   <div
                     key={j}
-                    className={"boardColumn " + CLASSNAME[column]}
+                    className={'boardColumn ' + CLASSNAME[column]}
                     onClick={() => this._handleClick(i, j)}>
                   </div>
                 );
