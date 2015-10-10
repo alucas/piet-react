@@ -4,10 +4,11 @@ import { EventEmitter } from 'events';
 import { dispatcher } from '../dispatcher/Dispatcher';
 import * as ActionType from '../constant/ActionType';
 import { COLOR } from '../constant/ColorConstant';
+import { AppStore } from '../store/AppStore';
 
 var STORE_EVENT = 'boardStore';
 
-var INIT_VALUE = COLOR.NORMAL_BLACK;
+var INIT_VALUE = AppStore.getColor();
 
 function _getInitValue() {
   return INIT_VALUE.slice(0);

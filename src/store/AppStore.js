@@ -7,7 +7,7 @@ import { COLOR } from '../constant/ColorConstant';
 
 var STORE_EVENT = 'appStore';
 
-var _color = COLOR.NORMAL_WHITE;
+var _color = COLOR.NORMAL_BLACK;
 
 function _setColor(color) {
   _color = color;
