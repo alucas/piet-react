@@ -14,4 +14,6 @@ eslint (code lint)
 jest (test)
 rimraf (clean workspace)
 express (dev http server)
+Docker (env builder)
+npm (module manager)
 
