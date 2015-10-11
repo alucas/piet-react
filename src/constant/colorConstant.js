@@ -1,16 +1,18 @@
-export const TYPE = {
-  LIGHT: 1,
-  NORMAL: 2,
-  DARK: 3,
-  RED: 4,
-  YELLOW: 5,
-  GREEN: 6,
-  CYAN: 7,
-  BLUE: 8,
-  MAGENTA: 9,
-  WHITE: 10,
-  BLACK: 11,
-};
+import keyMirror from 'keymirror';
+
+export const TYPE = keyMirror({
+  LIGHT: null,
+  NORMAL: null,
+  DARK: null,
+  RED: null,
+  YELLOW: null,
+  GREEN: null,
+  CYAN: null,
+  BLUE: null,
+  MAGENTA: null,
+  WHITE: null,
+  BLACK: null,
+});
 
 export const COLOR = {
   LIGHT_RED:[TYPE.LIGHT, TYPE.RED],
