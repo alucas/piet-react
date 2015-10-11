@@ -1,8 +1,7 @@
 import React from 'react';
 import ClassNames from 'classnames';
 
-import AppAction from '../../action/AppAction';
-import { COLOR } from '../../constant/ColorConstant';
+import { COLOR } from '../../constant/colorConstant';
 
 var _colors = [
   {className: 'colorLRed', value:COLOR.LIGHT_RED},
@@ -40,7 +39,7 @@ export default class ColorChooser extends React.Component {
           });
 
           return (
-            <div key={index} className={classes} onClick={() => AppAction.selectColor(color.value)}>
+            <div key={index} className={classes} onClick={() => this.props.selectColor(color.value)}>
             </div>
           );
         })

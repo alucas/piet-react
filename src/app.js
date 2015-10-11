@@ -1,9 +1,13 @@
 import 'babel-core/polyfill';
 
 import React from 'react';
-import PietApp from './component/PietApp.react';
+import { Provider } from 'react-redux';
+import App from './component/App.react';
+import store from './store/store';
 
 React.render(
-  <PietApp />,
+  <Provider store={store}>
+    {() => <App />}
+  </Provider>,
   document.getElementById('pietApp')
 );

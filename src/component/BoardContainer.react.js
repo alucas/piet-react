@@ -1,10 +1,16 @@
 import React from 'react';
 
-import BoardAction from '../action/BoardAction';
-import { CLASSNAME } from '../constant/ColorConstant';
+import * as BoardAction from '../action/boardAction';
+import { CLASSNAME } from '../constant/colorConstant';
 
 export default class BoardContainer extends React.Component {
   render() {
+    const { boardAction, color } = this.props;
+
+    function handleClick(rowIndex, columnIndex) {
+      boardAction.setColor(rowIndex, columnIndex, color);
+    }
+
     return (
       <div className="boardContainer"> {
         this.props.board.map((row, i) => {
@@ -15,7 +21,7 @@ export default class BoardContainer extends React.Component {
                   <div
                     key={j}
                     className={'boardColumn ' + CLASSNAME[column]}
-                    onClick={() => this._handleClick(i, j)}>
+                    onClick={() => handleClick(i, j)}>
                   </div>
                 );
               })}
@@ -24,9 +30,5 @@ export default class BoardContainer extends React.Component {
         })}
       </div>
     );
-  }
-
-  _handleClick(rowIndex, columnIndex) {
-    BoardAction.setColor(rowIndex, columnIndex, this.props.color);
   }
 }

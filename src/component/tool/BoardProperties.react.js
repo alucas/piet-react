@@ -1,31 +1,21 @@
 import React from 'react';
 
-import BoardAction from '../../action/BoardAction';
 import BoardResizer from './BoardResizer.react';
 
 export default class BoardProperties extends React.Component {
   render() {
+    const { boardAction } = this.props;
+
+    function addRow() { boardAction.addRow(1) };
+    function deleteRow() { boardAction.deleteRow(1) };
+    function addColumn() { boardAction.addColumn(1) };
+    function deleteColumn() { boardAction.deleteColumn(1) };
+
     return (
       <div className="boardProperties">
-        <BoardResizer label="Row" handleAdd={this._handleAddRow} handleDelete={this._handleDeleteRow} />
-        <BoardResizer label="Column" handleAdd={this._handleAddColumn} handleDelete={this._handleDeleteColumn} />
+        <BoardResizer label="Row" handleAdd={addRow} handleDelete={deleteRow} />
+        <BoardResizer label="Column" handleAdd={addColumn} handleDelete={deleteColumn} />
       </div>
     );
-  }
-
-  _handleAddRow() {
-    BoardAction.addRow();
-  }
-
-  _handleDeleteRow() {
-    BoardAction.deleteRow();
-  }
-
-  _handleAddColumn() {
-    BoardAction.addColumn();
-  }
-
-  _handleDeleteColumn() {
-    BoardAction.deleteColumn();
   }
 }
