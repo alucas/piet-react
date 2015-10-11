@@ -1,3 +1,4 @@
 #!/bin/sh
 
-docker run -ti -v $(readlink -f .):/app/ -w /app/ -p 3000:3000 alucas/piet-react bash
+docker run -ti -v $(readlink -f .):/home/swuser/app/ -w /home/swuser/app/ -p 3000:3000 --user swuser $(id -un)/piet-react bash
+

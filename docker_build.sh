@@ -1,1 +1,1 @@
-docker build -t alucas/piet-react .
+docker build -t $(id -un)/piet-react .
